@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="remote_key_service">Permet aux boutons d’apps de la télécommande (Netflix, YouTube, Prime Video, TCL Channel) d’ouvrir les apps choisies dans CleanYourTV UI, depuis n’importe quelle app. Le service lit uniquement ces boutons.</string>
+</resources>

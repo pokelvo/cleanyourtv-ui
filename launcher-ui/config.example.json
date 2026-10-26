@@ -1,0 +1,36 @@
+{
+  "shelf": [
+    "com.netflix.ninja",
+    "com.disney.disneyplus",
+    "com.hbo.hbonow",
+    "com.google.android.youtube.tv"
+  ],
+  "hidden_apps": [
+    "com.tcl.browser",
+    "com.tcl.gallery"
+  ],
+  "city": {
+    "name": "São Paulo",
+    "latitude": -23.5505,
+    "longitude": -46.6333
+  },
+  "theme": "auto",
+  "temperature": "C",
+  "weather": true,
+  "buttons": {
+    "s395": "tmdb:watchlist",
+    "s204": "tmdb:explore",
+    "s365": "live",
+    "s227": "input:com.tcl.tvinput/.passthroughinput.TvPassThroughService/HW1413744640"
+  },
+  "providers": {
+    "283": "com.crunchyroll.crunchyroid"
+  },
+  "show_all_providers": false,
+  "app_tiles": {
+    "com.tomatos.clientapp": {
+      "logo": "https://example.com/tomato-logo.png",
+      "color": "#D32F2F"
+    }
+  }
+}

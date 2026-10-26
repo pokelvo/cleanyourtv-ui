@@ -1,0 +1,27 @@
+# Projet "cytv" : met à jour l'écran d'accueil de la TV (CleanYourTV UI) sans le PC.
+#
+# Le NAS garde le code (branche ma-tv), surveille le dépôt d'origine sur GitHub, fusionne les nouveautés,
+# recompile l'appli avec vos réglages et la met à disposition de la TV, qui l'installe elle-même.
+# Service sur le réseau local : http://NAS_HOST:8765/api/status
+#
+# Adaptez les deux chemins à votre NAS :
+# - ./app  : le service (entrypoint.sh, run.sh, server.py), copie de launcher-ui/nas/
+# - ./data : le code, les outils Android, les réglages et la clé de signature, les journaux
+
+services:
+
+  cytv:
+    image: eclipse-temurin:17-jdk
+    container_name: cytv
+    ports:
+      - "8765:8765"   # service de mise à jour, interrogé par la TV
+    volumes:
+      - ./app:/app:ro
+      - ./data:/data
+    environment:
+      - PUID=1000
+      - PGID=10
+      - TZ=UTC   # your time zone, e.g. Europe/Berlin
+    entrypoint: ["/bin/bash", "/app/entrypoint.sh"]
+    mem_limit: 2g
+    restart: unless-stopped

@@ -1,0 +1,106 @@
+# Philips 55OLED907/12 (55" OLED+, 2022 model, Ambilight), French retail unit, Android TV 11 (SDK 30), firmware RTT2.211108.001 (build 21029)
+# ro.product.model=2021/22 Philips UHD Android TV   ro.product.device=PH1M_EA_9970A (TP Vision, MediaTek)
+# Security patch 2025-10-01. UI 1920x1080 at 320 dpi. Connected over Wi-Fi.
+# Status: first applied 2026-10-19, applied again after a factory reset, in daily use since; re-checked
+# 2026-10-26 with `pm list packages -d` (this list plus the factory-disabled packages below).
+#
+# Same board and firmware as examples/philips-50pus8517, philips-55oled707, philips-65oled706 and
+# philips-65oled907: their DO NOT DISABLE notes apply here as written. This is a separate, tailored list
+# for the 55" unit: it disables more of the NetTV web apps, the free ad-supported channels, Alexa and the
+# launcher customizer, and puts the streaming apps in their own commented section (see below).
+#
+# Apply:   TV_HOST=<TV_IP> tools/disable.sh examples/philips-55oled907/debloat.txt
+# Undo:    TV_HOST=<TV_IP> tools/restore.sh examples/philips-55oled907/debloat.txt com.google.android.tvlauncher
+# Everything is DISABLED, not uninstalled. Comment out any line you want to keep.
+#
+# Stock launcher: com.google.android.tvlauncher is NOT listed: launcher/build-and-install.sh does the Home
+#                 handover itself, and restore.sh takes it as the stock launcher to bring back.
+# Live TV app:    org.droidtv.playtv (antenna).
+#
+# Out of the box, org.droidtv.freeviewplayers, 15 uk.co.freeview.* apps and io.mimi.tvapp were already
+# disabled on this unit; they are not listed, so restore leaves them as they were.
+#
+# DO NOT DISABLE on this Philips (all checked on this unit or on the same board):
+#   org.droidtv.eum               the SOURCES key: GlobalKey opens org.droidtv.channels/.sources.SourcesDrawerActivity,
+#                                 which crashes binding eum's eUMService when eum is disabled
+#   org.droidtv.philipstvdrawer   the OPTIONS key: GlobalKey starts the PhilipsDrawer intent, which only this app answers
+#   org.droidtv.xtv               the TV core: sources drawer, inputs, the JointSPACE API (ports 1925/1926)
+#   org.droidtv.xtvsystem         the TV's system services that xtv depends on
+#   org.droidtv.homeintentresolver  decides where the Home key goes; without it Home can stop working
+#   org.droidtv.channels          channels and the Sources drawer
+#   org.droidtv.playtv            the antenna / live TV app
+#   org.droidtv.ambiair, org.droidtv.ambihuecommon, org.droidtv.alhuewizard, org.droidtv.sunrise
+#                                 Ambilight, Ambilight + Hue (bridge link and the Hue on/off service) and the sunrise alarm
+#   org.droidtv.oad, com.easy.oad firmware updates (over the air and from USB)
+#   Also kept: org.droidtv.aurora (xtv retries it forever when it is off; hide it in the launcher instead),
+#   org.droidtv.nettvregistration, lkb, icp, contentexplorer, the Vewd browser engine, DTS Play-Fi
+#   (com.phorus.playfi.*), org.droidtv.audiocalibration, com.google.android.katniss (Google Assistant),
+#   com.google.android.apps.mediashell (Chromecast) and com.google.android.tungsten.setupwraith (can own the
+#   saved Wi-Fi network on a wireless set; tools/disable.sh checks it anyway).
+#
+# Philips quirks seen on this unit:
+#   * The screensaver ships off, and tptvservice puts its delay back to "never" at every boot. On an OLED, set
+#     it again after each boot (a launcher can do it at boot, as this unit's does).
+#   * Ambilight + Hue: when "Ambilight+hue" is enabled in the TV's Ambilight settings, the TV turns the Hue
+#     lamps back on at every power-on, whatever was chosen before standby.
+#   * The JointSPACE API (port 1926) works from another computer, but called from an app on the TV itself it
+#     drives org.droidtv.xtv to 100 % CPU with connections that never close, until the TV is restarted.
+#   * SOURCES and OPTIONS reach an accessibility key filter as keycode 602 (scan 757 and 641) before GlobalKey.
+#   * usagelogger and demome hold TV_INPUT_HARDWARE, so tools/disable.sh skips them; they are left commented.
+
+# --- telemetry and usage logging ---
+# org.droidtv.usagelogger            # usage logger; skipped by tools/disable.sh (TV_INPUT_HARDWARE)
+org.droidtv.gel                      # "GatheringService": data collection via WorkManager
+org.droidtv.candeebug                # "CollectionService": diagnostic and viewing-data collection
+org.droidtv.tv.frameworklogger       # framework event logger
+com.google.android.feedback          # Google feedback and crash report uploader
+
+# --- content, recommendations and ads ---
+org.droidtv.nettvrecommender         # Philips VOD / TV-on-demand recommendation rows
+org.droidtv.recommendation           # Philips recommendation service
+org.droidtv.fastip                   # free ad-supported channels, has an advertising-ID activity
+com.zeasn.whalelive                  # Whale TV (free ad-supported channels)
+# org.droidtv.demome                 # shop demo mode; skipped by tools/disable.sh (TV_INPUT_HARDWARE)
+org.droidtv.nettv.market             # Philips App Gallery
+com.google.android.tvrecommendations # Google TV recommendation rows (also the notification panel)
+
+# --- preloaded apps and NetTV web apps ---
+org.droidtv.dropboxprovider          # Dropbox provider
+com.google.android.play.games        # Google Play Games
+org.droidtv.nettv_launcherapp        # Philips Smart TV app launcher
+org.droidtv.nettvapps                # Philips web apps manager
+org.droidtv.nettvapp1815             # Zeasn web app
+org.droidtv.nettvapp20004410         # Zeasn web app
+org.droidtv.nettvapp4546             # Zeasn web app
+org.droidtv.nettvapp4655             # Zeasn web app (Deezer)
+org.droidtv.nettvapp5326             # Zeasn web app
+org.droidtv.nettvapp5512             # Zeasn web app
+
+# --- voice and Philips extras (owner's choice) ---
+org.droidtv.amazonalexa              # Alexa only; Google Assistant (katniss) is kept
+org.droidtv.leanbackcustomizer       # partner customisation of the stock launcher; the OPTIONS key keeps working
+io.mimi.sdk.service                  # Mimi sound personalisation service (its app is disabled from the factory)
+
+# --- setup leftovers (as on philips-55oled707 / 65oled706, same board) ---
+android.autoinstalls.config.tpv.device   # Play auto-install config: reinstalls partner apps after a reset
+com.google.android.partnersetup          # partner setup
+com.google.android.onetimeinitializer    # one-time setup initializer
+com.google.android.sss.authbridge        # setup auth bridge
+com.google.android.syncadapters.calendar # Google Calendar sync (no calendar on a TV)
+com.google.android.marvin.talkback       # TalkBack screen reader; comment this out if anyone in the home needs it
+
+# --- operator pages for other countries (this unit is in France) ---
+org.droidtv.astrahdplus              # HD+ (German satellite operator) info pages
+org.droidtv.m7opapp                  # M7 satellite operators (Canal Digitaal, TV Vlaanderen, Skylink, HD Austria)
+
+# --- streaming apps: taste, not bloat ---
+# All of these were disabled on this unit because its owner does not use them. They are commented out here
+# so that nobody loses an app by copying the list: remove the "# " in front of the ones you never use.
+# com.netflix.ninja                  # Netflix
+# com.amazon.amazonvideo.livingroom  # Prime Video
+# com.apple.atve.androidtv.appletv   # Apple TV
+# com.google.android.youtube.tvmusic # YouTube Music
+# tv.wuaki.apptv                     # Rakuten TV
+# fr.filmotv.philips.android.tv      # FilmoTV
+# com.google.android.videos          # Google Play Movies
+# com.boosteroidtv.streaming         # Boosteroid (cloud gaming)

@@ -1,0 +1,131 @@
+{
+  "remote": "Sony BRAVIA remote (VU31)",
+  "device": "BRAVIA_VU31_4K, Google TV 14 (UKR1.240726.001), Realtek SoC, 2 GB",
+  "note": "This set's buttons arrive as ordinary Android keycodes, so they are listed by \"key\" (from `dumpsys window policy`, the global-key table) rather than by Linux scancode. Listing them is what makes them configurable in Settings > Remote Buttons; \"native\" ones are shown for reference and never intercepted. Not yet pressed against the physical remote: the five \"App button\" names are by elimination, and the defaults are a starting point.",
+  "buttons": [
+    {
+      "name": "Power",
+      "key": 26,
+      "label": "POWER",
+      "kind": "native"
+    },
+    {
+      "name": "Home",
+      "key": 3,
+      "label": "HOME",
+      "kind": "native"
+    },
+    {
+      "name": "Back",
+      "key": 4,
+      "label": "BACK",
+      "kind": "native"
+    },
+    {
+      "name": "Volume up",
+      "key": 24,
+      "label": "VOLUME_UP",
+      "kind": "native"
+    },
+    {
+      "name": "Volume down",
+      "key": 25,
+      "label": "VOLUME_DOWN",
+      "kind": "native"
+    },
+    {
+      "name": "Mute",
+      "key": 164,
+      "label": "VOLUME_MUTE",
+      "kind": "native"
+    },
+    {
+      "name": "Assistant (mic)",
+      "key": 194,
+      "label": "BUTTON_7",
+      "kind": "native"
+    },
+    {
+      "name": "Voice (second)",
+      "key": 195,
+      "label": "BUTTON_8",
+      "kind": "native"
+    },
+    {
+      "name": "Input",
+      "key": 178,
+      "label": "TV_INPUT",
+      "kind": "native"
+    },
+    {
+      "name": "TV",
+      "key": 170,
+      "label": "TV",
+      "kind": "configurable",
+      "default": "live"
+    },
+    {
+      "name": "Netflix",
+      "key": 191,
+      "label": "BUTTON_4",
+      "kind": "configurable",
+      "default": "com.netflix.ninja"
+    },
+    {
+      "name": "Prime Video",
+      "key": 189,
+      "label": "BUTTON_2",
+      "kind": "configurable",
+      "default": "com.amazon.amazonvideo.livingroom"
+    },
+    {
+      "name": "YouTube",
+      "key": 201,
+      "label": "BUTTON_14",
+      "kind": "configurable",
+      "default": "com.google.android.youtube.tv"
+    },
+    {
+      "name": "YouTube (second)",
+      "key": 202,
+      "label": "BUTTON_15",
+      "kind": "configurable",
+      "default": "com.google.android.youtube.tv"
+    },
+    {
+      "name": "App button 3",
+      "key": 190,
+      "label": "BUTTON_3",
+      "kind": "configurable",
+      "default": ""
+    },
+    {
+      "name": "App button 5",
+      "key": 192,
+      "label": "BUTTON_5",
+      "kind": "configurable",
+      "default": ""
+    },
+    {
+      "name": "App button 9",
+      "key": 196,
+      "label": "BUTTON_9",
+      "kind": "configurable",
+      "default": ""
+    },
+    {
+      "name": "App button 11",
+      "key": 198,
+      "label": "BUTTON_11",
+      "kind": "configurable",
+      "default": ""
+    },
+    {
+      "name": "App button 13",
+      "key": 200,
+      "label": "BUTTON_13",
+      "kind": "configurable",
+      "default": ""
+    }
+  ]
+}

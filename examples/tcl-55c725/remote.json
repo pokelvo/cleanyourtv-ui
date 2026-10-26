@@ -1,0 +1,29 @@
+{
+  "remote": "TCL RC902V",
+  "device": "TCL_RC902V_M2 (Bluetooth), Brazil",
+  "note": "Scancodes from `tools/tv.py 'getevent -lt'`, names from /system/usr/keylayout/Generic.kl. Native buttons are listed for reference and never intercepted.",
+  "buttons": [
+    { "name": "Mudo",                "scan": 113, "label": "VOLUME_MUTE",    "kind": "native" },
+    { "name": "Marcador",            "scan": 395, "label": "TCL_LIST",       "kind": "configurable", "default": "tmdb:watchlist" },
+    { "name": "Google Assistente",                "label": "voice",          "kind": "native" },
+    { "name": "Engrenagem",          "scan": 233, "label": "TCL_SET",        "kind": "configurable", "default": "settings" },
+    { "name": "Voltar",              "scan": 158, "label": "BACK",           "kind": "native" },
+    { "name": "Início",              "scan": 172, "label": "HOME",           "kind": "native" },
+    { "name": "TV",                  "scan": 365, "label": "TCL_EPG",        "kind": "configurable", "default": "live" },
+    { "name": "Entrada",             "scan": 417, "label": "TV_INPUT",       "kind": "native" },
+    { "name": "Volume +",            "scan": 115, "label": "VOLUME_UP",      "kind": "native" },
+    { "name": "Volume −",            "scan": 114, "label": "VOLUME_DOWN",    "kind": "native" },
+    { "name": "Canal +",             "scan": 402, "label": "CHANNEL_UP",     "kind": "native" },
+    { "name": "Canal −",             "scan": 403, "label": "CHANNEL_DOWN",   "kind": "native" },
+    { "name": "Menu",                "scan": 139, "label": "MENU",           "kind": "native" },
+    { "name": "Camadas",             "scan": 749, "label": "TCL_HOVRING",    "kind": "native" },
+    { "name": "Teclas coloridas",    "scan": 235, "label": "TCL_NUMBER",     "kind": "configurable", "default": "" },
+    { "name": "Grade vermelha",      "scan": 204, "label": "TCL_DASHBOARD",  "kind": "configurable", "default": "tmdb:explore" },
+    { "name": "Netflix",             "scan": 242, "label": "TCL_NETFLIX",    "kind": "configurable", "default": "com.netflix.ninja" },
+    { "name": "Prime Video",         "scan": 752, "label": "TCL_PRIMEVIDEO", "kind": "configurable", "default": "com.amazon.amazonvideo.livingroom" },
+    { "name": "Globoplay",           "scan": 586, "label": "TCL_GLOBO_PLAY", "kind": "configurable", "default": "com.globo.globotv" },
+    { "name": "Disney+",             "scan": 762, "label": "TCL_DISNEY",     "kind": "configurable", "default": "com.disney.disneyplus" },
+    { "name": "YouTube",             "scan": 245, "label": "TCL_YOUTUBE",    "kind": "configurable", "default": "com.google.android.youtube.tv" },
+    { "name": "TCL Channel",         "scan": 227, "label": "TCL_QUICK_MENU", "kind": "configurable", "default": "" }
+  ]
+}

@@ -1,0 +1,18 @@
+CleanYourTV UI
+Copyright (c) 2026 Matheus Caldeira (https://github.com/matheus-caldeira)
+
+This home screen is a fork of CleanYourTV's companion launcher idea with the look and much of the code of
+Free My TV. Both are under the MIT License.
+
+- CleanYourTV, Copyright (c) 2026 Gathin, https://github.com/Gathin23/cleanyourtv
+  (the repository this one forks: tools/, examples/, launcher/ and the rest; see ../LICENSE)
+- Free My TV, Copyright (c) 2026 Free My TV contributors, https://github.com/simbasjungles/free-my-tv
+  (the home screen, settings, screensaver and recommendations code in app/, from commit ffa23c7;
+  see LICENSE.free-my-tv)
+
+Third-party material that came with Free My TV keeps its own terms: the Inter typeface (SIL Open Font License 1.1),
+Material Symbols (Apache License 2.0), and the coin logos from cryptocurrency-icons (CC0). This product uses the TMDB
+API but is not endorsed or certified by TMDB. Weather data by Open-Meteo.com (CC BY 4.0).
+
+The YouTube shelf logo (app/assets/logos/youtube.png) is the one Free My TV ships in web/icons/; YouTube and its
+logo are trademarks of Google LLC. Other app logos on the shelf are lifted at runtime from each app's own TV art.
