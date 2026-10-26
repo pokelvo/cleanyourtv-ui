@@ -90,6 +90,10 @@ optional update checks), an optional accessibility service (remote keys), `RECEI
 guard, Ambilight choice) and `REQUEST_INSTALL_PACKAGES` (only used by the optional NAS updates). Build it from
 source and read `launcher-ui/app/AndroidManifest.xml` before installing.
 
+## Support
+
+If this saves you some time, you can [buy me a coffee](https://buymeacoffee.com/pokelvo). Thank you!
+
 ## Credits and licences
 
 - [Gathin23/cleanyourtv](https://github.com/Gathin23/cleanyourtv) and
