@@ -6,8 +6,17 @@ A home screen for Android TV with six built-in themes (Classic plus five new one
 here (the debloat tools, lists and the reference launcher in `launcher/`); this fork adds to the second home
 screen in `launcher-ui/`.
 
-> **Screenshots:** coming soon. They will show each theme with sample artwork, not real library posters.
-> Placeholder: `docs/themes/` (one image per theme).
+![Editorial theme](docs/themes/editorial.jpg)
+
+| | |
+|---|---|
+| ![Classic](docs/themes/classic.jpg) Classic | ![Glass](docs/themes/glass.jpg) Glass |
+| ![Editorial, dark](docs/themes/editorial-dark.jpg) Editorial (dark) | ![Colors](docs/themes/colors.jpg) Colors |
+| ![Minimal](docs/themes/minimal.jpg) Minimal | ![HUD](docs/themes/hud.jpg) HUD |
+| ![Editorial sources menu](docs/themes/menu-editorial.jpg) Editorial menu | ![HUD sources menu](docs/themes/menu-hud.jpg) HUD menu |
+
+Screenshots taken on a Philips 55OLED907. The posters come from the owner's Plex library and belong to their
+studios; they are shown only to illustrate the layout.
 
 ## Themes
 

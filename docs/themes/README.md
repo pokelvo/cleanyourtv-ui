@@ -1,3 +1,3 @@
 # Theme screenshots
 
-One screenshot per theme goes here (1280x720, sample artwork only).
+Home screen of each theme, taken on a Philips 55OLED907 (1280x720).
